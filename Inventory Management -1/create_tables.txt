@@ -1,0 +1,12 @@
+use jadrn007;
+
+drop table if exists category;
+drop table if exists vendor;
+
+create table category(
+id int AUTO_INCREMENT PRIMARY KEY,
+category_name varchar(30) NOT NULL);
+
+create table vendor(
+id int AUTO_INCREMENT PRIMARY KEY,
+vendor_name varchar(25) NOT NULL);

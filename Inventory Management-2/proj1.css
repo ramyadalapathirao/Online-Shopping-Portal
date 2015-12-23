@@ -1,0 +1,410 @@
+/* Ramya Krishna Dalapathirao Account: jadrn007 CS645, Spring 2015 Project #4*/
+* {
+    margin: 0;
+    padding: 0;
+}
+html,body {
+    height: 100%;
+    font-size: 100%;
+    min-width: 1100px;
+    width: 100%;
+    background-image: url(./images/light-grey-background-pattern-i32.jpg);
+    background-size: cover;
+    font-family: serif;
+    position: relative;
+}
+#wrapper {
+    min-height: 100%;
+    min-width: 1100px;
+    margin: 0;
+}
+#header {
+    background-color: #40B87C;
+    color: white;
+}
+#header-content {
+    background-color: #40B87C;
+    color: white;
+    padding-bottom: 1%;
+}
+#heading {
+    font-size: 50pt;
+    font-family: 'Cookie', Helvetica, sans-serif;
+    color: white;
+    padding: 7px 0px 0px 20px;
+    text-align: left;
+}
+#caption {
+    font-size: 20pt;
+    margin-bottom: 1%;
+    margin-left: 17%;
+    color: #4c4c4c;
+}
+form#loginform input[type='text'] {
+    width: 65%;
+}
+form#loginform input[type='password'] {
+    width: 65%;
+}
+form#loginform div#buttons {
+    width: 70%;
+    margin-top: 2%;
+}
+
+#header-content {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2px;
+    margin-bottom: 2px;
+}
+#header-content #info {
+    float: left;
+    width: 40%;
+    padding-left: 10%;
+    margin-left: 5%;
+    margin-right: 2%;
+    margin-top: 5%;
+    border: 1px solid blue;
+}
+#info p {
+    font-weight: bold;
+    font-size: 150%;
+}
+#login-form {
+    padding-top: 5%;
+}
+#login-form #login {
+    border: 2px solid #CCCCCC;
+    width: 30%;
+    margin: 0px auto;
+}
+#login-form #unauthorized {
+    padding: 2px;
+    text-align: center;
+}
+#login-form h1 {
+    text-align: center;
+    color: #767676;
+    padding-bottom: 2%;
+    padding-top: 1%;
+    font-family: 'Cinzel';
+    font-weight: bold;
+}
+#login-form #login hr {
+    color: #AAAAAA;
+    background-color: #AAAAAA;
+    margin-bottom: 5%;
+}
+#login-form #login h3 {
+    font-size: 100%;
+    color: #767676;
+    padding: 2% 0;
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Cinzel';
+}
+#login-form form {
+    width: 100%;
+}
+#login-form form input {
+    padding: 2%;
+    font-size: 100%;
+}
+input,textarea,label {
+    font-size: 120%;
+    padding: 2px;
+}
+
+input:focus {
+    border: 1px solid #3A9FE5;
+}
+#buttons , .buttons{
+    overflow: hidden;
+    margin: 0 auto;
+}
+#buttons .button, .buttons .button {
+    padding: 2%;
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+    background-color: #3A9FE5;
+}
+#tabs .buttons .button {
+    
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 5%;
+}
+#out .button,#in .button {
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+    background-color: #3A9FE5;
+    padding: 3px;
+}
+#loginform #buttons input[name="reset"] {
+    float: left;
+}
+#loginform #buttons input[name="submitform"] {
+    float: right;
+}
+.error {
+    padding-bottom: 2%;
+    padding-left: 20px;
+    color: #F00;
+    font-size: 100%;
+    font-style: italic;
+    height: 2px;
+    text-align: center;
+    clear: both;
+}
+
+.chgborder {
+    border: 2px solid red;
+    background-color: #FEE;
+}
+#menu {
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    font-size: 130%;
+    position: relative;
+    box-shadow: 0px 3px 3px #CCC;
+    font-family: 'Cinzel';
+}
+#menu ul {
+
+    position: absolute;
+    top: 30%;
+    width: 100%;
+}
+#menu ul li {
+    display: inline;
+    text-align: center;
+    padding: 0 3%;
+}
+#menu ul li a {
+    text-decoration: none;
+    color: #A9A9A9;
+}
+#menu ul li a:hover {
+    color: #767676 !important;
+}
+li a {
+    color: #A9A9A9;
+    font-size: 120%;
+    padding-top: 8px;
+}
+.active {
+    color: #767676 !important;
+    font-weight: bold !important;
+}
+a:not(.active) {
+    color: #A9A9A9 !important;
+}
+.imp {
+    color: #FF0000;
+}
+div#in h1 {
+    font-size: 150%;
+    color: green;
+    margin: 1% 0;
+    margin-bottom: 1%;
+    text-align: center;
+    font-family: 'Cinzel';
+}
+div#out h1 {
+    font-size: 150%;
+    color: #754719;
+    margin: 1% 0;
+    text-align: center;
+    font-family: 'Cinzel';
+}
+
+form {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+   
+}
+form input,form textarea {
+ font-size: 100%;
+}
+form table {
+    width: 100%;
+    margin: 0 auto;
+}
+form table tr td {
+ text-align: left;
+}
+form table tr td:first-child {
+    padding-left: 3%;
+    width: auto;
+}
+
+form table td {
+    padding-bottom: 2%;
+    text-align: left;
+}
+.successMessage {
+    margin: 1% auto;
+    width: 80%;
+    font-size: 20px;
+    padding: 3px;
+    color: green;
+    text-align: center;
+}
+.failureMessage {
+    margin: 1% auto;
+    width: 80%;
+    font-size: 20px;
+    padding: 3px;
+    text-align: center;
+    color: red;
+}
+#in .error,#out .error {
+    font-size: 100%;
+}
+
+.left {
+    border: 1px solid #CCC;
+    float: left;
+    margin-left: -15%;
+    margin-top: 2%;
+}
+
+figcaption {
+    text-align: center;
+    color: #3A9FE5;
+    font-weight: bold;
+    margin-bottom: 2%;
+    font-size: 100%;
+}
+
+footer {
+    clear: both;
+    position: relative;
+    height: 2.5em;
+    margin-top: -2.5em;
+    background-color: #767676;
+    text-align: center;
+    color: white;
+    line-height: 2.5em;
+}
+#tabs {
+    padding-bottom: 5em;
+    width: 800px;
+    margin: 0 auto;
+}
+div#login-form {
+    overflow: auto;
+    padding-bottom: 2.5em;
+}
+/*.sameline {
+    margin-left: 80px;
+    margin-right: 20px;
+}*/
+
+#out form,#in form
+{ 
+ width: 100%;
+ margin-left:auto;
+ margin-right:auto;
+ margin-top:2%;
+/* border:1px solid red;*/
+}
+#out fieldset
+{
+ border:1px solid #754719;  
+ background-color: #F3EFEB;
+ border-radius: 10px;
+}
+#in fieldset
+{
+  border:1px solid green;  
+ background-color: #E2F3E8;
+ border-radius: 10px;  
+}
+#out legend
+{
+ border:2px solid #754719;
+ padding:2px 4px;
+ margin-left:3%;
+ background-color:white;
+ border-radius:5px;
+}
+#in legend
+{
+ border:2px solid green;
+ padding:2px 4px;
+ margin-left:3%;
+ background-color:white;
+ border-radius:5px;
+}
+#in form table,#out form table {
+    width: 60%;
+    margin-left:5%;
+    float: left;
+    margin-right: 5%;
+    margin-bottom:1%;
+    margin-top:3%;
+   /* border:1px solid green;*/
+
+}
+
+#in form table td:first-child,#out form table td:first-child,#deleteitem table td:first-child {
+    /*width: 50%;*/
+   /* border: 1px solid red;*/
+}
+#tabs .buttons
+{
+   margin-bottom: 2%;  
+}
+
+#displaypic,#in_displaypic {
+    margin-top: 4%;
+}
+
+.busy_wait {
+    width: 100px;
+    display: block;
+    margin: 0 auto 0 auto;
+}
+#tabs hr
+{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:1%;
+	clear:both;
+    color: #000;
+}
+#tabs #out .buttons .button
+{
+   background-color: #754719; 
+}
+
+#tabs #in .buttons .button
+{
+  background-color: #80CC80;  
+  color: black;
+}
+div#logout h1
+{
+ color: #754719;
+ text-align: center;
+ margin-top: 1%;
+}
+div#logout p
+{
+ text-align: center;
+ color: #754719;
+ margin-top: 2px;
+ font-size: 110%;
+}
+.brown
+{
+  color: #767676;
+  font-weight: bold;
+}

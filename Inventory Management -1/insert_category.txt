@@ -1,0 +1,14 @@
+use jadrn007;
+
+insert into category(category_name)values(‘Compact’);
+insert into category(category_name)values(‘Ultra Compact’);
+insert into category(category_name)values(‘Travel zoom’);
+insert into category(category_name)values(‘Super zoom’);
+insert into category(category_name)values(‘Waterproof’);
+insert into category(category_name)values(‘Pro Digicam’);
+insert into category(category_name)values(‘Boutique Digicam’);
+insert into category(category_name)values(‘Mirrorless’);
+insert into category(category_name)values(‘DSLR’);
+insert into category(category_name)values(‘Point & Shoot’);
+
+

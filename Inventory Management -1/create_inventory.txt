@@ -1,0 +1,14 @@
+use jadrn007;
+
+drop table if exists inventory;
+
+create table inventory(
+	sku char(7) not null primary key,
+	category varchar(30) not null,
+	vendor varchar(25) not null,
+	identifier varchar(20) not null,
+	description varchar(500) not null,
+	features varchar(500) not null,
+	cost decimal(8,2) not null,
+	retail decimal(8,2) not null,
+	image varchar(30) not null);

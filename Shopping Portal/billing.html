@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+   <!--    Ramya Krishna Dalapathirao    Account:  jadrn007
+      CS645, Spring 2015
+      Project #3
+      -->
+   <head>
+      <title>Checkout</title>
+      <meta charset="utf-8">
+      <meta http-equiv="Pragma" content="no-cache" />
+      <meta http-equiv="cache-control" content="no-cache, no-store" />
+      <meta http-equiv="expires" content="-1" />
+      <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css" />
+      <link href="http://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="/jadrn007/proj3_css/font-awesome-4.3.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="/jadrn007/proj3_css/proj3.css" />
+      <link rel="stylesheet" type="text/css" href="/jadrn007/proj3_js/jquery-ui-1.11.2.custom/jquery-ui.theme.min.css" />
+      <script type="text/javascript" src="/jadrn007/proj3_js/jquery-1.11.1.js"></script>
+      <script type="text/javascript" src="/jadrn007/proj3_js/jquery-ui-1.11.2.custom/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="/jadrn007/proj3_js/ajax_get_lib.js"></script>
+      <!-- <script type="text/javascript" src="./js/slide_product_img.js"></script> -->
+      <script type="text/javascript" src="/jadrn007/proj3_js/shoppingcart.js"></script>
+      <script type="text/javascript" src="/jadrn007/proj3_js/search.js"></script>
+      <script type="text/javascript" src="/jadrn007/proj3_js/billing.js"></script>
+   </head>
+   <body>
+      <div id="wrapper">
+         <div id="header">
+            <div id="header-content">
+               <div id="logo">
+                  <p><span id="heading"><strong>Camera W<img src="/jadrn007/images/cameralens.png" alt="eye" 
+                     width="28"/>rld</strong></span><span id="cart"><a href="/jadrn007/servlet/DispatchServlet?action=order"><i class="fa fa-shopping-cart fa-2x"></i>Cart(<span id="count">0</span>)</a></span></p>
+                  <p id="caption"><em><b>Capture it all...</b></em></p>
+               </div>
+            </div>
+            <div id="menu">
+               <ul>
+                  <li><a href="/jadrn007/servlet/DispatchServlet?action=home"><i class="fa fa-home"></i>Home</a></li>
+                  <li><a href="/jadrn007/servlet/DispatchServlet?action=products"><i class="fa fa-tags"></i>Products</a></li>
+                  <li><a href="/jadrn007/servlet/DispatchServlet?action=order"  class="active"><i class="fa fa-cart-plus"></i>Order Now</a></li>
+                  <li><a href="/jadrn007/servlet/DispatchServlet?action=contact"><i class="fa fa-phone"></i>Contact us</a></li>
+                  <li><input type="text" size="25" name="search" placeholder="Search our Products" /><a id='search-icon' href='javascript:void(0)'><i class="fa fa-search"></i></a></li>
+               </ul>
+            </div>
+         </div>
+         <div id="order">
+            <a href="/jadrn007/servlet/DispatchServlet?action=products">&lt;&lt; Continue Shopping</a>
+            <h2>Secure Checkout</h2>
+            <a href="/jadrn007/servlet/DispatchServlet?action=order" id='edit'><i class="fa fa-pencil-square-o"></i> Edit Cart</a>
+            <div id="show_billing">
+               <form id="order_now" method="post" action="/jadrn007/servlet/DispatchServlet?action=place_order">
+                  <div id="ship">
+                     <h2 class='heading'>Shipping and Billing</h2>
+                     <div class="error" id="berror">&nbsp;</div>
+                     <h4>Shipping address</h4>
+                     <ul>
+                        <li>
+                           <label class="align">First Name:<span class="imp"> *</span></label>
+                           <input type="text" name="fName" size="20" />
+                           <label class="sameline">Last Name:<span class="imp"> *</span></label>
+                           <input type="text" name="lName" size="20"/>
+                        </li>
+                        <li>
+                           <label>Address Line1:<span class="imp"> *</span></label>
+                           <input type="text" name="address1" size="40"/>
+                        </li>
+                        <li>
+                           <label>Address Line2:</label>
+                           <input type="text"  class="billing_align" name="address2" size="40"/>
+                        </li>
+                        <li>
+                           <label>City:<span class="imp"> *</span></label>
+                           <input type="text" name="city" size="25"/>
+                           <label class="sameline">State:<span class="imp"> *</span></label>
+                           <input type="text" name="state" size="2"/>
+                        </li>
+                        <li>
+                           <label>Zip Code:<span class="imp"> *</span></label>
+                           <input type="text" name="zipcode" size="5" maxlength="5"/>
+                           <label class='sameline'>Phone:<span class="imp"> *</span></label>
+                           (<input type="text" name="cellarea" size="3" maxlength="3"/>)-
+                           <input type="text" name="cellprefix" size="3" maxlength="3"/>-
+                           <input type="text" name="cellnumber" size="4" maxlength="4"/>
+                        </li>
+                        <li>
+                           <input type="checkbox" id="checkbox" name="sameshipping" value="same" />Billing address same as Shipping address
+                        </li>
+                     </ul>
+                     <h4>Billing address</h4>
+                     <ul>
+                        <li>
+                           <label class="align">First Name:<span class="imp"> *</span></label>
+                           <input type="text" name="sfName" size="20"/>
+                           <label class="sameline">Last Name:<span class="imp"> *</span></label>
+                           <input type="text" name="slName" size="20"/>
+                        </li>
+                        <li>
+                           <label>Address Line1:<span class="imp"> *</span></label>
+                           <input type="text" name="saddress1" size="40"/>
+                        </li>
+                        <li>
+                           <label>Address Line2:</label>
+                           <input type="text"  class="billing_align" name="saddress2" size="40"/>
+                        </li>
+                        <li>
+                           <label>City:<span class="imp"> *</span></label>
+                           <input type="text" name="scity" size="25"/>
+                           <label class="sameline">State:<span class="imp"> *</span></label>
+                           <input type="text" name="sstate" size="2"/>
+                        </li>
+                        <li>
+                           <label>Zip Code:<span class="imp"> *</span></label>
+                           <input type="text" name="szipcode" size="5" maxlength="5"/>
+                           <label class='sameline'>Phone:<span class="imp"> *</span></label>
+                           (<input type="text" name="scellarea" size="3" maxlength="3"/>)-
+                           <input type="text" name="scellprefix" size="3" maxlength="3"/>-
+                           <input type="text" name="scellnumber" size="4" maxlength="4"/>
+                        </li>
+                     </ul>
+                  </div>
+                  <div id="pay">
+                     <h2 class='heading'>Payment Information</h2>
+                     <ul>
+                        <li>
+                           <label for="paytype">Payment Type:<span class="imp"> *</span></label>
+                           <input type="radio" name="payment" id="paytype" class="paytype" value="Visa"/>
+                           <img src="/jadrn007/images/visa.jpeg" alt="visa" width="50">
+                           <input type="radio" name="payment" class="paytype" value="Master card"/>
+                           <img src="/jadrn007/images/mastercard.png" alt="mastercard" width="50">
+                           <input type="radio" name="payment" class="paytype" value="American Express"/>
+                           <img src="/jadrn007/images/american_express.jpeg" alt="american" width="50" height="30">
+                           <input type="radio" name="payment" class="paytype" value="Discover" />
+                           <img src="/jadrn007/images/discover.jpeg" alt="discover" width="50">
+                        </li>
+                        <li>
+                           <label>Card Number:<span class="imp"> *</span></label>
+                           <input type="text" name="cardno" size="16"/>
+                           <label class="sameline">Security Code:<span class="imp"> *</span></label>
+                           <input type="text" name="cvv" size="3"/>
+                        </li>
+                        <li>
+                           <label>Expiration Date:<span class="imp"> *</span></label>
+                           <span class="billing_align">Month</span>
+                           <input type="text" name="expmonth" size="2"/>
+                           <span class='sameline'>Year</span>
+                           <input type="text" name="expyear" size="4"/>
+                        </li>
+                     </ul>
+                     <div class="error" id="payerror">&nbsp;</div>
+                     <hr />
+                     <table id='bill_info'>
+                     </table>
+                     <div class="buttons">
+                        <input type="reset" class="button" name="reset" value="Reset" />
+                        <input type="submit" class="button green" name="my_form_submit" value="Submit" />
+                     </div>
+                  </div>
+               </form>
+            </div>
+            <div id="billing_cart">
+            </div>
+            <!--  <div id="no_cart"></div> -->
+         </div>
+      </div>
+      <footer>
+         &copy; Copyright 2015, Camera World 
+      </footer>
+   </body>
+</html>

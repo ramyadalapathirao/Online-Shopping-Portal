@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+
+<html>
+   <!--    Ramya Krishna Dalapathirao    Account:  jadrn007
+      CS645, Spring 2015
+      Project #1
+      -->
+   <head>
+      <title>Manage Inventory</title>
+      <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+      <meta http-equiv="Pragma" content="no-cache" />
+      <meta http-equiv="expires" content="0" />
+      <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css" />
+      <link href="http://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="/~jadrn007/proj1/proj1.css" />
+      <script type="text/javascript" src="/jquery/jquery.js"></script>
+      <script type="text/javascript" src="/~jadrn007/proj1/js/ajax_get_lib.js"></script>
+      <script type="text/javascript" src="/~jadrn007/proj1/js/additem.js"></script>
+   </head>
+   <body>
+      <div id="wrapper">
+      <div id="header">
+         <div id="header-content">
+            <div id="logo">
+               <p id="heading"><strong>Camera W<img src="/~jadrn007/proj1/images/cameralens.png" alt="eye" 
+                  width="28"/>rld</strong></p>
+               <!-- <p id="caption"><em><b>Capture it all...</b></em></p> -->
+            </div>
+        </div>
+         </div>
+         <div id="menu">
+            <ul>
+               <li><a href="javascript:void(0)" id="add">Add Item</a></li>
+               <li><a href="javascript:void(0)" id="edit">Edit Item</a></li>
+               <li><a href="javascript:void(0)" id="delete">Delete Item</a></li>
+               <li><a href="/perl/jadrn007/logout.cgi" id="logout">Logout</a></li>
+            </ul>
+         </div>
+         <div id="tabs">
+            <div id="additem">
+               <div id="addItemSuccessMessage"></div>
+               <div id="addItemFailureMessage"></div>
+               <h1><u>Add an Item to Inventory</u></h1>
+               <form id="add" method="post" enctype="multipart/form-data" action="">
+                  <div class="error" id="adderror">&nbsp;</div>
+                  <table>
+                     <tr>
+                        <td><label>SKU:<span class="imp"> *</span></label></td>
+                       <td> <input type="text" name="sku" size="10" placeholder="ABC-123"/></td>
+                     </tr>
+                     <tr>
+                        <td><label>Category:<span class="imp"> *</span></label></td>
+                        
+                         <td>  <select name="category">
+                              <option value="None">Select Category</option>
+                           </select>
+                        <label class="sameline">Vendor:<span class="imp"> *</span></label>
+                        
+                           <select name="vendor">
+                              <option value="None">Select Vendor</option>
+                           </select>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td><label>Manufacturer's Identifier:<span class="imp"> *</span></label></td>
+                        <td><input type="text" name="identifier" size="15"/></td>
+                     </tr>
+                     <tr>
+                        <td><label>Description:<span class="imp"> *</span></label></td>
+                        <td><textarea name="description" placeholder="product description" rows="5" cols="50"/></textarea></td>
+                     </tr>
+                     <tr>
+                        <td><label>Product Features:<span class="imp"> *</span></label></td>
+                        <td><textarea name="features" placeholder="product features" rows="5" cols="50"/></textarea></td>
+                     </tr>
+                     <tr>
+                        <td><label>Cost:<span class="imp"> *</span></label></td>
+                        <td>$<input type="text" name="cost" size="10" placeholder="00.00"/>
+                        <label class="sameline">Retail:<span class="imp"> *</span></label>
+                        $<input type="text" name="retail" size="10" placeholder="00.00"/></td>
+                     </tr>
+                     <tr>
+                        <td><label>Product Image:<span class="imp"> *</span></label></td>
+                        <td><input type="file" name="photo" /></td>
+                     </tr>
+                     <tr>
+                        <td><input type="hidden" id="hiddenField" value=""/></td>
+                     </tr>
+                  </table>
+                  <div>&nbsp;</div>
+                  <div id="buttons">
+                     <input type="reset" class="button" name="resetform" value="Reset" />
+                     <input type="submit" class="button" name="submitform" value="Add Product" />
+                     <img src="http://jadran.sdsu.edu/~jadrn007/proj1/images/busy_wait.gif" class="busy_wait" id="add_busy_pic" alt="busy wait icon" />
+                  </div>
+               </form>
+               <div>&nbsp;</div>
+            </div>
+            <!-- end of add -->
+            <div id="edititem">
+               <div id="editItemSuccessMessage"></div>
+               <div id="editItemFailureMessage"></div>
+               <h1><u>Edit an Item</u></h1>
+               <p><label>Enter SKU:  </label><input type="text" name="editsku" size="10" />   
+                  <input type="button" class="button" name="getsku" value="Search" />
+               </p>
+               <div class="error" id="editerror" >&nbsp;</div>
+               <div id="hideedit">
+              
+                  <h3>Here are the product details</h3>
+                  <div class="left" id="displaypic"></div>
+                  <form id="editform" method="post" enctype="multipart/form-data" action="">
+                     <table>
+                        <tr>
+                           <td><label>SKU:<span class="imp"> *</span></label></td>
+                           <td><input type="text" name="retrievedsku" size="10"/></td>
+                        </tr>
+                        <tr>
+                           <td><label>Category:<span class="imp"> *</span></label></td>
+                           <td>
+                              <select name="editcategory">
+                                 <option>None</option>
+                              </select>
+                           <label class="sameline">Vendor:<span class="imp"> *</span></label>
+                              <select name="editvendor">
+                                 <option>None</option>
+                              </select>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><label>Manufacturer's Identifier:<span class="imp"> *</span></label></td>
+                           <td><input type="text" name="editidentifier" size="15"/></td>
+                        </tr>
+                        <tr>
+                           <td><label>Description:<span class="imp"> *</span></label></td>
+                           <td><textarea name="editdescription" placeholder="product description" rows="5" cols="50"/></textarea></td>
+                        </tr>
+                        <tr>
+                           <td><label>Product Features:<span class="imp"> *</span></label></td>
+                           <td><textarea name="editfeatures" placeholder="product features" rows="5" cols="50"/></textarea></td>
+                        </tr>
+                        <tr>
+                           <td><label>Cost:<span class="imp"> *</span></label></td>
+                           <td>$<input type="text" name="editcost" size="10" placeholder="00.00"/>
+                           <label class="sameline">Retail:<span class="imp"> *</span></label>
+                           $<input type="text" name="editretail" size="10" placeholder="00.00"/></td>
+                        </tr>
+                        <tr>
+                           <td><label>Product Image:</label></td>
+                           <td><input type="file" name="editphoto" /></td>
+                        </tr>
+                        <tr>
+                           <td><input type="hidden" name="hiddenphoto" /></td>
+                        </tr>
+                     </table>
+                     <div id="buttons">
+                        <input type="reset" class="button" name="resetform" value="Reset" />
+                        <input type="button" class="button" name="editformbutton" value="Edit Product" />
+                        <img src="http://jadran.sdsu.edu/~jadrn007/proj1/images/busy_wait.gif" class="busy_wait" id="edit_busy_pic" alt="busy wait icon" />
+                     </div>
+                  </form>
+               </div>
+               <div>&nbsp;</div>
+            </div><!-- end of edit -->
+            <div id="deleteitem">
+               <div id="deleteItemSuccessMessage"></div>
+               <div id="deleteItemFailureMessage"></div>
+               <h1><u>Delete an Item From Inventory</u></h1>
+               <p><label>Enter SKU:  </label><input type="text" name="deletesku" size="10" />  
+                  <input type="button" class="button" name="findsku" value="Search" />
+               </p>
+               <div class="error" id="deleteerror" >&nbsp;</div>
+               <div id="hidedelete">
+                  <h3>Please check the product details before confirming delete</h3>
+                  <div class="left" id="displaydeletepic"></div>
+                  <div id="deleteform">
+                     <table>
+                        <tr>
+                           <td><label>SKU:</label></td>
+                           <td><input type="text" name="skutodelete" size="15" disabled/></td>
+                        </tr>
+                        <tr>
+                           <td><label>Category:</label></td>
+                           <td><input type="text"  name="deletecategory" size="15" disabled/></td>
+                        </tr>
+                        <tr>
+                           <td><label>Vendor:</label></td>
+                           <td><input type="text"  name="deletevendor" size="15" disabled/></td>
+                        </tr>
+                        <tr>
+                           <td><label>Manufacturer's Identifier:</label></td>
+                           <td><input type="text"  name="deleteidentifier" size="15" disabled/></td>
+                        </tr>
+                        <tr>
+                           <td><label>Description:</label></td>
+                           <td><textarea  name="deletedescription" rows="5" cols="50" disabled></textarea></td>
+                        </tr>
+                        <tr>
+                           <td><label>Product Features:</label></td>
+                           <td><textarea  name="deletefeatures" rows="5" cols="50" disabled></textarea></td>
+                        </tr>
+                        <tr>
+                           <td><label>Cost:</label></td>
+                           <td><input type="text" name="deletecost" size="15" disabled/></td>
+                        </tr>
+                        <tr>
+                           <td><label>Retail:</label></td>
+                           <td><input type="text" name="deleteretail" size="15" disabled/></td>
+                        </tr>
+                        <tr>
+                           <td><input type="hidden" name="deletephoto" /></td>
+                        </tr>
+                     </table>
+                     <div id="buttons">
+                        <input type="button" class="button" name="canceldelete" value="Cancel" />
+                        <input type="button" class="button" name="deleteformbutton" value="Delete Product" />
+                        <img src="http://jadran.sdsu.edu/~jadrn007/proj1/images/busy_wait.gif" class="busy_wait" id="delete_busy_pic" alt="busy wait icon" />
+                     </div>
+                  </div>
+                  <div>&nbsp;</div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer>
+        &copy; Copyright 2015, Camera World 
+      </footer>
+   </body>
+</html>

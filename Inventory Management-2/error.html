@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+   <!--    Ramya Krishna Dalapathirao    Account:  jadrn007
+      CS645, Spring 2015
+      Project #2
+      -->
+   <head>
+      <title>Login Error</title>
+      <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+      <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+      <link href="http://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" type="text/css" >
+      <link rel="stylesheet" type="text/css" href="/jadrn007/proj1.css" />
+      <script type="text/javascript" src="/jquery/jquery.js"></script>
+      <script type="text/javascript" src="/jadrn007/js/login.js"></script>
+   </head>
+   <body>
+      <div id="wrapper">
+         <div id="header">
+            <div id="header-content">
+               <div id="logo">
+                  <p id="heading"><strong>Camera W<img src="/jadrn007/images/cameralens.png" alt="eye" 
+                     width="28"/>rld</strong></p>
+                  <p id="caption"><em><b>Capture it all...</b></em></p>
+               </div>
+            </div>
+         </div>
+         <div id="login-form">
+            <h1>Employee Login</h1>
+            <div id="login">
+               <h3>Merchandise Record Management</h3>
+               <hr />
+               <form id="loginform" method="post" action="/jadrn007/servlet/Login">
+                  <input type="text" name="username" size="30" placeholder="Username" />
+                  <input type="password" name="password" size="30" placeholder="Password" /><br />
+                  <div id="buttons">
+                     <input type="reset" class="button" name="reset" value="Clear" />
+                     <input type="submit" class="button" name="submitform" value="Sign In" />
+                  </div>
+                  <div>&nbsp;</div>
+               </form>
+            </div>
+            <div id ="unauthorized" class="error">UnAuthorized Login. Please try again</div>
+         </div>
+      </div>
+      <footer>
+         &copy; Copyright 2015, Camera World 
+      </footer>
+   </body>
+</html>

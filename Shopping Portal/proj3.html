@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+   <!--    Ramya Krishna Dalapathirao    Account:  jadrn007
+      CS645, Spring 2015
+      Project #3
+      -->
+   <head>
+      <title>Camera World</title>
+      <meta charset="utf-8">
+      <meta http-equiv="Pragma" content="no-cache" />
+      <meta http-equiv="cache-control" content="no-cache, no-store" />
+      <meta http-equiv="expires" content="-1" />
+      <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css" />
+      <link href="http://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="/jadrn007/proj3_css/font-awesome-4.3.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="/jadrn007/proj3_css/proj3.css" />
+      <link rel="stylesheet" type="text/css" href="/jadrn007/proj3_js/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css" />
+      <link rel="stylesheet" type="text/css" href="/jadrn007/proj3_js/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css" />
+      <script type="text/javascript" src="/jadrn007/proj3_js/jquery-1.11.1.js"></script>
+      <script type="text/javascript" src="/jadrn007/proj3_js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="/jadrn007/proj3_js/ajax_get_lib.js"></script>
+      <script type="text/javascript" src="/jadrn007/proj3_js/search.js"></script>
+      <script type="text/javascript" src="/jadrn007/proj3_js/shoppingcart.js"></script>
+      <script type="text/javascript" src="/jadrn007/proj3_js/home.js"></script>
+   </head>
+   <body>
+      <div id="wrapper">
+         <div id="header">
+            <div id="header-content">
+               <div id="logo">
+                  <p><span id="heading"><strong>Camera W<img src="/jadrn007/images/cameralens.png" alt="eye" 
+                     width="28"/>rld</strong></span><span id="cart"><a href="/jadrn007/servlet/DispatchServlet?action=order"><i class="fa fa-shopping-cart fa-2x"></i>Cart(<span id="count">0</span>)</a></span></p>
+                  <p id="caption"><em><b>Capture it all...</b></em></p>
+               </div>
+            </div>
+            <div id="menu">
+               <ul>
+                  <li><a href="/jadrn007/servlet/DispatchServlet?action=home" class="active"><i class="fa fa-home"></i>Home</a></li>
+                  <li><a href="/jadrn007/servlet/DispatchServlet?action=products"><i class="fa fa-tags"></i>Products</a></li>
+                  <li><a href="/jadrn007/servlet/DispatchServlet?action=order"><i class="fa fa-cart-plus"></i>Order Now</a></li>
+                  <li><a href="/jadrn007/servlet/DispatchServlet?action=contact"><i class="fa fa-phone"></i>Contact us</a></li>
+                  <li><input type="text" size="25" name="search" placeholder="Search our Products" /><a id='search-icon' href='javascript:void(0)'><i class="fa fa-search"></i></a></li>
+               </ul>
+            </div>
+         </div>
+         <div id="home">
+            <div id="banner">
+               <img src='/jadrn007/images/all_cameras.jpg' alt="image" height="400"/>
+               <div id="text">
+                  <h3><b>World's best Cameras at your doorstep</b></h3>
+                  <h4><br />Best prices..Huge savings..</h4>
+                  <p><a href="/jadrn007/servlet/DispatchServlet?action=products">GET YOUR'S NOW</a></p>
+               </div>
+            </div>
+         </div>
+         <div id="about">
+            <div>
+               <h3>Who We Are</h3>
+               <p>Camera World is a global online destination for photography, imaging electronics. Serving customers for more than 10 years camera world has grown its online store to include World's latest and best digital camera equipment. We offer the best selection and prices on all our products. We are dedicated to help you capture and enjoy your life's most precious moments.</p>
+            </div>
+            <div>
+               <h3>Our services</h3>
+               <p>We commit to provide extrodinary service  before and after you purchase from us. If you need help with the products you purchased or would prefer to arrange your return you can contact our agents by phone or email. Our in-house customer service staff will work to resolve any issues to your satisfaction in a friendly and professional manner </p>
+            </div>
+            <div>
+               <h3>Great Prices</h3>
+               <p>Our extendive selection of products allow us to make great savings for you. Your savings start with our great competitive prices and continue with our low shipping rates we offer on many popular items</p>
+            </div>
+         </div>
+         <div id="content">
+            <h2>Camera Categories</h2>
+            <hr />
+            <div id="products_img_div">
+            </div>
+         </div>
+      </div>
+      <footer>
+         &copy; Copyright 2015, Camera World 
+      </footer>
+   </body>
+</html>

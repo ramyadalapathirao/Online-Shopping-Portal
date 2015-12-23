@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+   <!--    Ramya Krishna Dalapathirao    Account:  jadrn007
+      CS645, Spring 2015
+      Project #2
+      -->
+   <head>
+      <title>Manage Inventory</title>
+      <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+      <meta http-equiv="Pragma" content="no-cache" />
+      <meta http-equiv="expires" content="0" />
+      <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css" />
+      <link href="http://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="/jadrn007/proj1.css" />
+      <script type="text/javascript" src="/jquery/jquery.js"></script>
+      <script type="text/javascript" src="/jadrn007/js/ajax_get_lib.js"></script>
+      <script type="text/javascript" src="/jadrn007/js/recievedin.js"></script>
+   </head>
+   <body>
+      <div id="wrapper">
+      <div id="header">
+         <div id="header-content">
+            <div id="logo">
+               <p id="heading"><strong>Camera W<img src="jadran.sdsu.edu/~jadrn007/proj1/images/cameralens.png" alt="eye" 
+                  width="28"/>rld</strong></p>
+               <!-- <p id="caption"><em><b>Capture it all...</b></em></p> -->
+            </div>
+        </div>
+         </div>
+         <div id="menu">
+            <ul>
+               <li><a href="javascript:void(0)" id="add">Inventory Recieved</a></li>
+               <li><a href="javascript:void(0)" id="edit">Inventory Sent</a></li>
+               <li><a href="/perl/jadrn007/logout.cgi" id="logout">Logout</a></li>
+            </ul>
+         </div>
+         <div id="tabs">
+            <div id="in">
+               <div class="successMessage"></div>
+               <div class="failureMessage"></div>
+               <h1><u>Inventory Recieved</u></h1>
+               <div class="left" id="displaypic"></div>
+               <form id="add" method="post" enctype="multipart/form-data" action="">
+                  <div class="error" id="inerror">&nbsp;</div>
+                  <table>
+                     <tr>
+                        <td><label>SKU:<span class="imp"> *</span></label></td>
+                       <td> <input type="text" name="sku" size="10" placeholder="ABC-123"/>
+                        <label class="sameline">Date:<span class="imp"> *</span></label>
+                        <input type="text" name="todaydate" placeholder="mm/dd/yyyy" /></td>   
+                     </tr>
+                     <tr>
+                        <td><label>Category:<span class="imp"> *</span></label></td>
+                        
+                         <td><input type="text" name="category" readonly/>
+                        <label class="sameline">Vendor:<span class="imp"> *</span></label>
+                        <input type="text" name="vendor" readonly/></td>
+                     </tr>
+                     <tr>
+                        <td><label>Manufacturer's Identifier:<span class="imp"> *</span></label></td>
+                        <td><input type="text" name="identifier" size="15" readonly/></td>
+                     </tr>
+                      <tr>
+                        <td><label>Quantity:<span class="imp"> *</span></label></td>
+                        <td><input type="text" name="quantity" size="15"/></td>
+                      </tr>
+                  </table>
+                  <div>&nbsp;</div>
+                  <div id="buttons">
+                     <input type="reset" class="button" name="resetform" value="Reset" />
+                     <input type="submit" class="button" name="submitform" value="Add Product" />
+                     <img src="http://jadran.sdsu.edu/~jadrn007/proj1/images/busy_wait.gif" class="busy_wait" id="add_busy_pic" alt="busy wait icon" />
+                  </div>
+               </form>
+               <div>&nbsp;</div>
+            </div>
+            <!-- end of add -->
+        </div>
+    </div>
+</body>
+</html>

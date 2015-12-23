@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<!--    Ramya Krishna Dalapathirao    Account:  jadrn013
+        CS645, Spring 2015
+        Project #1
+-->
+<head>
+	<title>Add Item</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./proj1.css" />
+    <script type="text/javascript" src="./js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="./js/ajax_get_lib.js"></script>
+    <script type="text/javascript" src="./js/additem.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+        
+        <div id="header-content">
+            <div id="logo">
+             <img id="image" src="./images/3009355.png" alt="camera" width="280" height="200"/>
+			<p id="heading"><strong>Camera W<img src="./images/cameralens.png" alt="eye" 
+			width="28"/>rld</strong></p>
+			<p id="caption"><em><b><span class="orange">Inspire the World.</span> <br/><br /><span class="orange">Create the future...</span></b></em></p>
+            
+           
+		</div>
+            
+        </div>
+        
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="#additem" id="add">Add Item</a></li>
+                <li><a href="#edititem" id="edit">Edit Item</a></li>
+                <li><a href="#deleteitem" id="delete">Delete Item</a></li>
+            </ul>
+        </div>
+        <div id="tabs">
+        <div id="additem">
+            <h1>Add an Item to Inventory</h1>
+            
+            <form id="add" method="post" action="/perl/jadrn013/confirmation.cgi">
+                <div class="error" >&nbsp;</div>
+               <table>
+                    <tr><td><label>SKU:<span class="imp"> *</span></label></td>
+		                  <td><input type="text" name="sku" size="25"/></td></tr>
+                   <tr><td><label>Category:<span class="imp"> *</span></label></td>
+                       <td>
+                          <select name="category">
+                              <option>None</option>
+                            </select></td>
+                    </tr>
+                    <tr><td><label>Vendor:<span class="imp"> *</span></label></td>
+                       <td>
+                          <select name="vendor">
+                              <option>None</option>
+                            </select></td>
+                    </tr>
+                   <tr><td><label>Manufacturer's Identifier:<span class="imp"> *</span></label></td>
+		                  <td><input type="text" name="identifier" size="25"/></td></tr>
+                   <tr><td><label>Description:<span class="imp"> *</span></label></td>
+		                  <td><textarea name="description" placeholder="product description" rows="5" cols="30"/></textarea></td></tr>
+                    <tr><td><label>Product Features:<span class="imp"> *</span></label></td>
+		                  <td><textarea name="features" placeholder="product features" rows="5" cols="30"/></textarea></td></tr>
+                    <tr><td><label>Cost:<span class="imp"> *</span></label></td>
+		                  <td><input type="text" name="cost" size="25"/></td></tr>
+                    <tr><td><label>Retail:<span class="imp"> *</span></label></td>
+		                  <td><input type="text" name="retail" size="25"/></td></tr>
+                    <tr><td><label>Product Image:<span class="imp"> *</span></label></td>
+		                  <td><input type="file" name="photo" /></td></tr>
+                
+               </table>
+            <div>&nbsp;</div>
+             
+            <div id="buttons">
+             
+             <input type="reset" class="button" name="reset" value="Clear" />
+             <input type="submit" class="button" name="submitform" value="Submit" />
+             </div>
+             
+            </form>
+            <div>&nbsp;</div>
+        </div><!-- end of add -->
+        <div id="edititem">
+        <h1>Edit Inventory</h1>
+        </div>
+        <div id="deleteitem">
+        <h1>Delete Inventory</h1>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

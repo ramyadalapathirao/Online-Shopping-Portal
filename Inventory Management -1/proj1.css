@@ -1,0 +1,382 @@
+/* Ramya Krishna Dalapathirao Account: jadrn007 CS645, Spring 2015 Project #1*/
+* {
+    margin: 0;
+    padding: 0;
+}
+html,body {
+    height: 100%;
+    font-size: 100%;
+    min-width: 1100px;
+    width: 100%;
+    background-image: url(./images/light-grey-background-pattern-i32.jpg);
+    background-size: cover;
+    font-family: serif;
+    position: relative;
+}
+#wrapper {
+    min-height: 100%;
+    min-width: 1100px;
+    margin: 0;
+}
+#header {
+    background-color: #40B87C;
+    color: white;
+}
+#header-content {
+    background-color: #40B87C;
+    color: white;
+    padding-bottom: 1%;
+}
+#heading {
+    font-size: 50pt;
+    font-family: 'Cookie', Helvetica, sans-serif;
+    color: white;
+    padding: 7px 0px 0px 20px;
+    text-align: left;
+}
+#caption {
+    font-size: 20pt;
+    margin-bottom: 1%;
+    margin-left: 17%;
+    color: #4c4c4c;
+}
+form#loginform input[type='text'] {
+    width: 65%;
+}
+form#loginform input[type='password'] {
+    width: 65%;
+}
+form#loginform div#buttons {
+    width: 70%;
+    margin-top: 2%;
+}
+
+#header-content {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2px;
+    margin-bottom: 2px;
+}
+#header-content #info {
+    float: left;
+    width: 40%;
+    padding-left: 10%;
+    margin-left: 5%;
+    margin-right: 2%;
+    margin-top: 5%;
+    border: 1px solid blue;
+}
+#info p {
+    font-weight: bold;
+    font-size: 150%;
+}
+#login-form {
+    padding-top: 5%;
+}
+#login-form #login {
+    border: 2px solid #CCCCCC;
+    width: 30%;
+    margin: 0px auto;
+}
+#login-form #unauthorized {
+    padding: 2px;
+    text-align: center;
+}
+#login-form h1 {
+    text-align: center;
+    color: #767676;
+    padding-bottom: 2%;
+    padding-top: 1%;
+    font-family: 'Cinzel';
+    font-weight: bold;
+}
+#login-form #login hr {
+    color: #AAAAAA;
+    background-color: #AAAAAA;
+    margin-bottom: 5%;
+}
+#login-form #login h3 {
+    font-size: 100%;
+    color: #767676;
+    padding: 2% 0;
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Cinzel';
+}
+#login-form form {
+    width: 100%;
+}
+#login-form form input {
+    padding: 2%;
+    font-size: 100%;
+}
+input,textarea,label {
+    font-size: 120%;
+    padding: 2px;
+}
+option {
+    padding: 2px 2px 2px 10px;
+    font-size: 120%;
+}
+input:focus {
+    border: 1px solid #3A9FE5;
+}
+#buttons {
+    overflow: hidden;
+    margin: 0 auto;
+}
+#buttons .button {
+    padding: 2%;
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+    background-color: #3A9FE5;
+}
+#tabs #buttons .button {
+    margin-right: 5%;
+}
+#edititem .button,#deleteitem .button,#additem .button {
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+    background-color: #3A9FE5;
+    padding: 3px;
+}
+#loginform #buttons input[name="reset"] {
+    float: left;
+}
+#loginform #buttons input[name="submitform"] {
+    float: right;
+}
+.error {
+    padding-bottom: 4%;
+    padding-left: 20px;
+    color: #F00;
+    font-size: 100%;
+    font-style: italic;
+    height: 2px;
+    text-align: center;
+}
+#editerror,#deleteerror {
+    padding-top: 4px;
+    text-align: center;
+}
+.chgborder {
+    border: 2px solid red;
+    background-color: #FEE;
+}
+#menu {
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    font-size: 130%;
+    position: relative;
+    box-shadow: 0px 3px 3px #CCC;
+    font-family: 'Cinzel';
+}
+#menu ul {
+
+    position: absolute;
+    top: 30%;
+    width: 100%;
+}
+#menu ul li {
+    display: inline;
+    text-align: center;
+    padding: 0 3%;
+}
+#menu ul li a {
+    text-decoration: none;
+    color: #A9A9A9;
+}
+#menu ul li a:hover {
+    color: #767676 !important;
+}
+li a {
+    color: #A9A9A9;
+    font-size: 120%;
+    padding-top: 8px;
+}
+.active {
+    color: #767676 !important;
+    font-weight: bold !important;
+}
+a:not(.active) {
+    color: #A9A9A9 !important;
+}
+.imp {
+    color: #FF0000;
+}
+div#additem h1 {
+    font-size: 150%;
+    color: green;
+    margin: 3% 0;
+    margin-bottom: 1%;
+    text-align: center;
+    font-family: 'Cinzel';
+}
+div#edititem h1 {
+    font-size: 150%;
+    color: #3A9FE5;
+    margin: 3% 0;
+    text-align: center;
+    font-family: 'Cinzel';
+}
+div#deleteitem h1 {
+    font-size: 150%;
+    color: #800000;
+    margin: 3% 0;
+    text-align: center;
+    font-family: 'Cinzel';
+}
+form {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+form input,form textarea {
+ font-size: 100%;
+}
+form table {
+    width: 100%;
+    margin: 0 auto;
+}
+form table tr td {
+ text-align: left;
+}
+form table tr td:first-child {
+    padding-left: 3%;
+    width: auto;
+}
+
+form table td {
+    padding-bottom: 2%;
+    text-align: left;
+}
+#addItemSuccessMessage,#editItemSuccessMessage,#deleteItemSuccessMessage {
+    margin: 1% auto;
+    width: 60%;
+    font-size: 20px;
+    padding: 3px;
+    color: green;
+    text-align: center;
+}
+#addItemFailureMessage,#editItemFailureMessage,#deleteItemFailureMessage {
+    margin: 1% auto;
+    width: 60%;
+    font-size: 20px;
+    padding: 3px;
+    text-align: center;
+    color: red;
+}
+#additem .error {
+    font-size: 100%;
+}
+/* edit */
+#edititem p,#deleteitem p {
+    text-align: center;
+    margin-bottom: 2px;
+}
+.left {
+    border: 1px solid #CCC;
+    float: left;
+    margin-left: -15%;
+    margin-top: 2%;
+}
+#editform {
+    width: 75%;
+    margin: 0 auto;
+}
+#hideedit {
+    margin-top: 1%;
+}
+#hideedit h3,#hidedelete h3 {
+    text-align: center;
+    color: #3A9FE5;
+    margin-top: -2%;
+    padding-bottom: 2%;
+    font-weight: bold;
+    font-family:'Cinzel';
+}
+
+#hidedelete table label {
+    font-weight: bold;
+}
+#hidedelete table {
+    border-collapse: collapse;
+}
+#hidedelete table td:nth-child(1) {
+    width: 50%;
+    padding-left: 10%;
+}
+#hidedelete table td:nth-child(2) {
+    padding-left: 15%;
+    font-style: italic;
+}
+figcaption {
+    text-align: center;
+    color: #3A9FE5;
+    font-weight: bold;
+    margin-bottom: 2%;
+    font-size: 100%;
+}
+option {
+    width: 100px;
+}
+footer {
+    clear: both;
+    position: relative;
+    height: 2.5em;
+    margin-top: -2.5em;
+    background-color: #767676;
+    text-align: center;
+    color: white;
+    line-height: 2.5em;
+}
+#tabs {
+    padding-bottom: 5em;
+    width: 900px;
+    margin: 0 auto;
+}
+div#login-form {
+    overflow: auto;
+    padding-bottom: 2.5em;
+}
+.sameline {
+    margin-left: 60px;
+    margin-right: 20px;
+}
+#additem form table,#edititem form table {
+    width: 100%;
+
+}
+#additem form table td:first-child,#edititem form table td:first-child,#deleteitem table td:first-child {
+    width: 30%;
+}
+ #tabs #buttons .button {
+    padding: 1% 4%;
+}
+#displaydeletepic {
+    margin-right: 5%;
+}
+#hidedelete table td {
+    height: 50px;
+}
+#deleteform {
+    width: 70%;
+    margin: 1% auto;
+}
+#deleteform #buttons {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#hidedelete table {
+    margin-left: 1%;
+}
+.busy_wait {
+    width: 100px;
+    display: block;
+    margin: 0 auto 0 auto;
+}
